@@ -50,10 +50,21 @@ HEADERS += \
 FORMS += \
         SoftPhone.ui
 
-INCLUDEPATH +=usr/lib
-INCLUDEPATH +=usr/local/lib
+INCLUDEPATH += /home/cejikeme/Codebase/libs/pjproject/pjsip/include
+INCLUDEPATH += /home/cejikeme/Codebase/libs/pjproject/pjlib/include
+INCLUDEPATH += /home/cejikeme/Codebase/libs/pjproject/pjlib-util/include
+INCLUDEPATH += /home/cejikeme/Codebase/libs/pjproject/pjnath/include
 
-LIBS += `pkg-config --libs libpjproject`
+
+# Library search path
+LIBS += -L/home/cejikeme/Codebase/libs/pjproject/pjsip/lib
+
+# PJSIP libs (choose the ones you actually use, but this set is safe for most softphones)
+LIBS += -lpjsua2 -lpjsua -lpjsip-ua -lpjsip-simple -lpjsip -lpjmedia -lpjmedia-codec -lpjmedia-videodev -lpjmedia-audiodev -lpjmedia -lpjnath -lpjlib-util -lpj
+
+# Other dependencies
 LIBS += -lboost_system -lboost_chrono -lboost_thread -ludev
 LIBS += -lnetsnmp -lasound
 LIBS += -lfftw3
+
+

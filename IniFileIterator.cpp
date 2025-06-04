@@ -375,12 +375,12 @@ bool IniFileIterator::isSection(std::string const& str)
     return retVal;
 }
 
-FileItem IniFileIterator::getItemByKey(std::string const& key) throw (ItemNotFoundException)
+FileItem IniFileIterator::getItemByKey(std::string const& key)
 {
-	return getItemByKey("", key);
+    return getItemByKey("", key);
 }
 
-FileItem IniFileIterator::getItemByKey(std::string const& section, std::string const& key)  throw (ItemNotFoundException)
+FileItem IniFileIterator::getItemByKey(std::string const& section, std::string const& key)
 {
     std::string trimmedSection = section;
     std::string trimmedKey = key;
@@ -414,7 +414,7 @@ FileItem IniFileIterator::getItemByKey(std::string const& section, std::string c
     throw ItemNotFoundException("ItemNotFoundException: " + key + " not found in section " + section + "!!!");
 }
 
-std::string IniFileIterator::getSectionByKey(std::string const& key)  throw (SectionNotFoundException)
+std::string IniFileIterator::getSectionByKey(std::string const& key)
 {
     std::string trimmedKey = key;
     trim(trimmedKey);
@@ -440,7 +440,7 @@ std::string IniFileIterator::getSectionByKey(std::string const& key)  throw (Sec
     throw SectionNotFoundException("SectionNotFoundException: " + key + " not found!!!");
 }
 
-void IniFileIterator::getItemsBySection(std::string const& section, std::vector<FileItem>& fileItems)  throw (SectionNotFoundException)
+void IniFileIterator::getItemsBySection(std::string const& section, std::vector<FileItem>& fileItems)
 {
     fileItems.clear();
 
@@ -462,3 +462,4 @@ void IniFileIterator::getItemsBySection(std::string const& section, std::vector<
         throw SectionNotFoundException("SectionNotFoundException: " + section + " not found!!!");
     }
 }
+

@@ -7,7 +7,7 @@
 #include <QHostAddress>
 #include <QNetworkInterface>
 #include <QVBoxLayout>
-#include <QDesktopWidget>
+#include <QScreen>
 #include <QGridLayout>
 #include <QSplitter>
 #include <QTextEdit>

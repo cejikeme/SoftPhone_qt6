@@ -1,0 +1,27 @@
+# Qt/C++ build artifacts
+*.o
+*.obj
+*.so
+*.a
+*.dll
+*.exe
+*.user
+*.user.*
+*.pro.user
+*.moc
+*.prl
+*.autosave
+*.qrc
+Makefile*
+build/
+debug/
+release/
+*.log
+*.tmp
+*.swp
+*.ilk
+*.pch
+*.sdf
+*.ipch
+*.db
+*.pro.user.*

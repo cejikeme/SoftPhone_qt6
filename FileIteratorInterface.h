@@ -10,19 +10,21 @@
 class FileIteratorInterface
 {
 public:
-
     virtual ~FileIteratorInterface(){}
 
     virtual bool isLoaded() const = 0;
 
-    virtual FileItem getItemByKey(std::string const& key) throw (ItemNotFoundException) = 0;
+    // Throws ItemNotFoundException if item is not found.
+    virtual FileItem getItemByKey(std::string const& key) = 0;
 
-    virtual FileItem getItemByKey(std::string const& section, std::string const& key) throw (ItemNotFoundException) = 0;
+    // Throws ItemNotFoundException if item is not found.
+    virtual FileItem getItemByKey(std::string const& section, std::string const& key) = 0;
 
-    virtual std::string getSectionByKey(std::string const& key) throw (SectionNotFoundException) = 0;
+    // Throws SectionNotFoundException if section is not found.
+    virtual std::string getSectionByKey(std::string const& key) = 0;
 
-    virtual void getItemsBySection(std::string const& section, std::vector<FileItem>& fileItems) throw (SectionNotFoundException) = 0;
-
+    // Throws SectionNotFoundException if section is not found.
+    virtual void getItemsBySection(std::string const& section, std::vector<FileItem>& fileItems) = 0;
 };
 
-#endif
+#endif // FILE_ITERATOR_INTERFACE_H
